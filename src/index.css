@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #fbfaf6;
+  --bg-raised: #ffffff;
+  --bg-sunken: #f2efe6;
+  --text: #20232b;
+  --text-muted: #5b6072;
+  --text-faint: #8b8f9e;
+  --border: #e4e0d2;
+  --accent: #5b4af0;
+  --accent-soft: rgba(91, 74, 240, 0.1);
+  --accent-2: #e8603c;
+  --accent-2-soft: rgba(232, 96, 60, 0.12);
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --serif: "Fraunces", "Iowan Old Style", "Georgia", serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14151b;
+    --bg-raised: #1b1d26;
+    --bg-sunken: #0f1016;
+    --text: #e8e7ef;
+    --text-muted: #9a9cae;
+    --text-faint: #686b7d;
+    --border: #2a2c38;
+    --accent: #8f7dff;
+    --accent-soft: rgba(143, 125, 255, 0.14);
+    --accent-2: #ff8a66;
+    --accent-2-soft: rgba(255, 138, 102, 0.14);
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.font-serif-display {
+  font-family: var(--serif);
+}
+
+/* KaTeX sizing tweaks so block math breathes nicely */
+.katex-display {
+  margin: 1.25em 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 2px;
+}
+
+.katex {
+  font-size: 1.08em;
+}
+
+a {
+  color: var(--accent);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
